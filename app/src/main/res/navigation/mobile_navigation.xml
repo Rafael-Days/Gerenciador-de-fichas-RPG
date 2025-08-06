@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_campaign">
+
+    <fragment
+        android:id="@+id/nav_campaign"
+        android:name="com.example.latariarpg.view.CampaignFragment"
+        android:label="@string/campaign"
+        tools:layout="@layout/fragment_campaign" />
+
+    <fragment
+        android:id="@+id/nav_sheet"
+        android:name="com.example.latariarpg.view.SheetFragment"
+        android:label="@string/sheet"
+        tools:layout="@layout/fragment_sheet" />
+
+</navigation>
