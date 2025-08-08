@@ -8,5 +8,6 @@
     <string name="action_settings">Settings</string>
 
     <string name="campaign">Campanhas</string>
+    <string name="activity_campaign">Campanhas Ativas</string>
     <string name="sheet">Fichas</string>
 </resources>

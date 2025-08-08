@@ -6,17 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
-import com.example.latariarpg.databinding.FragmentHomeBinding
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.latariarpg.databinding.FragmentCampaignBinding
+import com.example.latariarpg.service.model.CampaignModel
+import com.example.latariarpg.view.adapter.CampaignAdapter
 import com.example.latariarpg.viewmodel.CampaignViewModel
 
 class CampaignFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private var _binding: FragmentCampaignBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: CampaignViewModel by viewModels()
+    private val adapter: CampaignAdapter = CampaignAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,18 +30,28 @@ class CampaignFragment : Fragment() {
         val campaignViewModel =
             ViewModelProvider(this).get(CampaignViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentCampaignBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        campaignViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        binding.recyclerviewCampaign.layoutManager = LinearLayoutManager(context)
+
+        binding.recyclerviewCampaign.adapter = adapter
+
+        viewModel.getAllCampaigns()
+
+        setObservers()
+
         return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun setObservers(){
+        viewModel.campaign.observe(viewLifecycleOwner){
+            adapter.updateCampaigns(it)
+        }
     }
 }
