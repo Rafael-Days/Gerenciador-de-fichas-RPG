@@ -26,5 +26,6 @@ class CampaignAdapter: RecyclerView.Adapter<CampaignViewHolder>() {
 
     fun updateCampaigns(list: List<CampaignModel>){
         campaignList = list
+        notifyDataSetChanged()
     }
 }

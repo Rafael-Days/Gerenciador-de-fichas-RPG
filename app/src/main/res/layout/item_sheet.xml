@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/textview_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/textview_level"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Nome"
+        android:paddingTop="16dp"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textview_level"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/textview_name"
+        android:text="Level"
+        android:paddingTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textview_class"
+        app:layout_constraintTop_toBottomOf="@id/textview_name"
+        app:layout_constraintEnd_toStartOf="@id/textview_proficiency"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        android:paddingTop="16dp"
+        android:text="Classe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textview_proficiency"
+        app:layout_constraintTop_toBottomOf="@id/textview_level"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_class"
+        android:textSize="20sp"
+        android:paddingTop="16dp"
+        android:text="Proficiencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textview_ca"
+        app:layout_constraintTop_toBottomOf="@id/textview_class"
+        app:layout_constraintEnd_toStartOf="@id/textview_initiative"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        android:paddingTop="16dp"
+        android:text="CA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textview_initiative"
+        app:layout_constraintTop_toBottomOf="@id/textview_class"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        android:paddingTop="16dp"
+        android:text="Iniciativa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textview_cd"
+        app:layout_constraintTop_toBottomOf="@id/textview_class"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_initiative"
+        android:textSize="20sp"
+        android:paddingTop="16dp"
+        android:text="CD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textview_hp_max"
+        app:layout_constraintTop_toBottomOf="@id/textview_ca"
+        app:layout_constraintEnd_toStartOf="@id/textview_hp_current"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        android:paddingTop="16dp"
+        android:text="Vida Máxima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/textview_hp_current"
+        app:layout_constraintTop_toBottomOf="@id/textview_ca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_hp_max"
+        android:textSize="20sp"
+        android:paddingTop="16dp"
+        android:text="Vida Atual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TableLayout
+        android:id="@+id/tabelaAtributos"
+        app:layout_constraintTop_toBottomOf="@id/textview_hp_max"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <!-- Cabeçalho -->
+        <TableRow android:background="#DDDDDD">
+            <TextView
+                android:text="Atributo"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="8dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:text="Valor"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:text="Modificador"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <!-- Força -->
+        <TableRow android:background="#FFFFFF">
+            <TextView
+                android:text="Força"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/strength"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/mod_strength"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp" />
+        </TableRow>
+
+        <!-- Destreza -->
+        <TableRow android:background="#F7F7F7">
+            <TextView
+                android:text="Destreza"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/dexterity"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/mod_dexterity"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp" />
+        </TableRow>
+
+        <!-- Constituição -->
+        <TableRow android:background="#FFFFFF">
+            <TextView
+                android:text="Constituição"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/constitution"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/mod_constitution"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp" />
+        </TableRow>
+
+        <!-- Inteligência -->
+        <TableRow android:background="#F7F7F7">
+            <TextView
+                android:text="Inteligência"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/intelligence"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/mod_intelligence"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp" />
+        </TableRow>
+
+        <!-- Sabedoria -->
+        <TableRow android:background="#FFFFFF">
+            <TextView
+                android:text="Sabedoria"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/wisdom"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/mod_wisdom"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp" />
+        </TableRow>
+
+        <!-- Carisma -->
+        <TableRow android:background="#F7F7F7">
+            <TextView
+                android:text="Carisma"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/charisma"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/mod_charisma"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp" />
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
