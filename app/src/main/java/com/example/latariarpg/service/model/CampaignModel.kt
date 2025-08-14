@@ -1,8 +1,5 @@
 package com.example.latariarpg.service.model
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-
 data class CampaignModel (
 
     val idCampanha: Int,

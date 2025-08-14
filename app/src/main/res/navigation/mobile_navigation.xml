@@ -14,7 +14,13 @@
     <fragment
         android:id="@+id/nav_sheet"
         android:name="com.example.latariarpg.view.SheetFragment"
-        android:label="@string/sheet"
+        android:label="@string/sheets"
         tools:layout="@layout/fragment_sheet" />
+
+    <fragment
+        android:id="@+id/nav_char_sheet"
+        android:name="com.example.latariarpg.view.CharSheetFragment"
+        android:label="@string/sheet"
+        tools:layout="@layout/fragment_char_sheet" />
 
 </navigation>

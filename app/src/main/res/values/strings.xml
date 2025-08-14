@@ -9,5 +9,6 @@
 
     <string name="campaign">Campanhas</string>
     <string name="activity_campaign">Campanhas Ativas</string>
-    <string name="sheet">Fichas</string>
+    <string name="sheets">Fichas</string>
+    <string name="sheet">Ficha</string>
 </resources>

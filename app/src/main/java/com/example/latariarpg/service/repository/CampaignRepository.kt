@@ -96,6 +96,10 @@ class CampaignRepository {
         return campaigns.find { it.idCampanha == id }
     }
 
+    fun getAllSheetsByCampaignId(id: Int): List<SheetModel>{
+        return getCampaignById(id)?.fichas ?: emptyList()
+    }
+
     fun deleteCampaign(id: Int): Boolean {
         return campaigns.removeIf { it.idCampanha == id }
     }
