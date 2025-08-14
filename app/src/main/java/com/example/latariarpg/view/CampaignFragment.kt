@@ -4,15 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.latariarpg.databinding.FragmentCampaignBinding
-import com.example.latariarpg.service.model.CampaignModel
 import com.example.latariarpg.view.adapter.CampaignAdapter
+import com.example.latariarpg.view.listener.CampaignListener
 import com.example.latariarpg.viewmodel.CampaignViewModel
+import com.example.latariarpg.R
+import com.example.latariarpg.service.constants.CampaignConstants
 
 class CampaignFragment : Fragment() {
 
@@ -27,15 +28,13 @@ class CampaignFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val campaignViewModel =
-            ViewModelProvider(this).get(CampaignViewModel::class.java)
-
         _binding = FragmentCampaignBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         binding.recyclerviewCampaign.layoutManager = LinearLayoutManager(context)
-
         binding.recyclerviewCampaign.adapter = adapter
+
+        attachListener()
 
         viewModel.getAllCampaigns()
 
@@ -53,5 +52,18 @@ class CampaignFragment : Fragment() {
         viewModel.campaign.observe(viewLifecycleOwner){
             adapter.updateCampaigns(it)
         }
+    }
+
+    private fun attachListener(){
+        adapter.attachListener(object : CampaignListener{
+            override fun onClick(id: Int) {
+
+                val bundle = Bundle()
+                bundle.putInt(CampaignConstants.KEY.CAMPAIGN_ID, id)
+
+                findNavController().navigate(R.id.nav_sheet, bundle)
+            }
+
+        })
     }
 }

@@ -6,33 +6,32 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.latariarpg.databinding.FragmentSheetBinding
+import com.example.latariarpg.service.constants.CampaignConstants
 import com.example.latariarpg.viewmodel.SheetViewModel
 
 class SheetFragment : Fragment() {
 
     private var _binding: FragmentSheetBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+
+    private val viewModel: SheetViewModel by viewModels()
+
+    private var campaignId = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        b: Bundle?
     ): View {
-        val sheetViewModel =
-            ViewModelProvider(this).get(SheetViewModel::class.java)
-
         _binding = FragmentSheetBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textGallery
-        sheetViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        campaignId = arguments?.getInt(CampaignConstants.KEY.CAMPAIGN_ID) ?: 0
+        viewModel//implementar get campaign id
+
         return root
     }
 
