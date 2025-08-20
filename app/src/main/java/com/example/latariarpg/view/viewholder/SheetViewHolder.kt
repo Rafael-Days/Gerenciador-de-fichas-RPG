@@ -15,6 +15,6 @@ class SheetViewHolder(private val item: ItemSheetListBinding, private val listen
         item.textviewHp.text = "${sheet.pvMax} / ${sheet.pvAtual}"
 
         // Criar um evento que leva ao char sheet
-        //item.layoutSheetItem.setOnClickListener { listener.onClick(sheet.idFicha) }
+        item.layoutSheetItem.setOnClickListener { listener.onClick(sheet.idFicha) }
     }
 }

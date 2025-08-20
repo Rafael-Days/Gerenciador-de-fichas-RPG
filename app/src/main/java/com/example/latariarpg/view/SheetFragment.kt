@@ -58,7 +58,7 @@ class SheetFragment : Fragment() {
 
     private fun setObservers(){
         viewModel.campaign.observe(viewLifecycleOwner){
-            binding.textviewSheets.text = it.nomeCampanha
+            binding.textviewSheets.text = it.nomeCampanha //nome da campanha na parte superior da fragment
             adapter.updateSheets(it.fichas)
         }
     }
@@ -68,6 +68,7 @@ class SheetFragment : Fragment() {
             override fun onClick(id: Int) {
 
                 val bundle = Bundle()
+                bundle.putInt(CampaignConstants.KEY.CAMPAIGN_ID, campaignId)
                 bundle.putInt(CampaignConstants.KEY.SHEET_ID, id)
                 // verificar proque ele não está levando ao char sheet
                 findNavController().navigate(R.id.nav_char_sheet, bundle)

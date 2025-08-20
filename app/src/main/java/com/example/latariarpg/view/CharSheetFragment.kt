@@ -7,26 +7,44 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.latariarpg.R
+import com.example.latariarpg.databinding.FragmentCharSheetBinding
+import com.example.latariarpg.databinding.FragmentSheetBinding
+import com.example.latariarpg.service.constants.CampaignConstants
+import com.example.latariarpg.view.adapter.SheetAdapter
 import com.example.latariarpg.viewmodel.CharSheetViewModel
+import com.example.latariarpg.viewmodel.SheetViewModel
 
 class CharSheetFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = CharSheetFragment()
-    }
+    private var _binding: FragmentCharSheetBinding? = null
+    private val binding get() = _binding!!
 
     private val viewModel: CharSheetViewModel by viewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
+    private var campaignId = 0
+    private var sheetId = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_char_sheet, container, false)
+        _binding = FragmentCharSheetBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+
+        setObservers()
+
+        campaignId = arguments?.getInt(CampaignConstants.KEY.CAMPAIGN_ID) ?: 0
+        sheetId = arguments?.getInt(CampaignConstants.KEY.SHEET_ID) ?: 0
+        viewModel.getSheet(campaignId, sheetId)
+
+        return root
     }
+
+    private fun setObservers(){
+        viewModel.char_sheet.observe(viewLifecycleOwner){
+            binding.textviewName.text = it.nome
+            binding.textviewClass.text = it.classe
+        }
+    }
+
 }
