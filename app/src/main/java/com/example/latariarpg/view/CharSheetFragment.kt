@@ -43,7 +43,22 @@ class CharSheetFragment : Fragment() {
     private fun setObservers(){
         viewModel.char_sheet.observe(viewLifecycleOwner){
             binding.textviewName.text = it.nome
+            binding.edittextLevel.setText(it.level.toString())
             binding.textviewClass.text = it.classe
+            binding.edittextProficiency.setText(it.proficiencia.toString())
+            binding.edittextCa.setText(it.classeArmadura.toString())
+            binding.edittextInitiative.setText(it.iniciativa.toString())
+            binding.edittextCd.setText(it.classeDificuldade.toString())
+
+            binding.edittextHpMax.setText(it.pvMax.toString())
+            binding.edittextHpCurrent.setText(it.pvAtual.toString())
+
+            binding.strength.setText(it.atributos.forca.toString())
+            binding.dexterity.setText(it.atributos.destreza.toString())
+            binding.constitution.setText(it.atributos.constituicao.toString())
+            binding.intelligence.setText(it.atributos.inteligencia.toString())
+            binding.wisdom.setText(it.atributos.sabedoria.toString())
+            binding.charisma.setText(it.atributos.carisma.toString())
         }
     }
 

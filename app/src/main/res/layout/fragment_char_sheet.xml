@@ -1,161 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.CharSheetFragment"
     android:padding="8dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:context=".view.CharSheetFragment">
 
     <TextView
         android:id="@+id/textview_name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/edittext_level"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
         android:text="Nome"
-        android:paddingTop="16dp"
         android:textSize="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <EditText
-        android:id="@+id/edittext_level"
-        android:autofillHints="Level"
-        android:inputType="numberDecimal"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@id/textview_name"
-        android:text="REFAZER TODO O LAYOUT COM EDITTEXT"
-        android:paddingTop="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textview_class"
-        app:layout_constraintTop_toBottomOf="@id/textview_name"
-        app:layout_constraintEnd_toStartOf="@id/textview_proficiency"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:paddingTop="16dp"
         android:text="Classe"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/edittext_level"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_name" />
+
+    <EditText
+        android:id="@+id/edittext_level"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="Level"
+        android:inputType="numberDecimal"
+        android:paddingTop="16dp"
+        android:text="7"
+        android:textColorHint="@color/red"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_class"
+        app:layout_constraintTop_toBottomOf="@id/textview_name" />
 
     <TextView
         android:id="@+id/textview_proficiency"
-        app:layout_constraintTop_toBottomOf="@id/edittext_level"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/textview_class"
-        android:textSize="20sp"
-        android:paddingTop="16dp"
-        android:text="Proficiencia"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/textview_ca"
-        app:layout_constraintTop_toBottomOf="@id/textview_class"
-        app:layout_constraintEnd_toStartOf="@id/textview_initiative"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:text="@string/proficiencia"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/edittext_proficiency"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20sp"
-        android:paddingTop="16dp"
-        android:text="CA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintTop_toBottomOf="@id/textview_class" />
 
-    <TextView
-        android:id="@+id/textview_initiative"
-        app:layout_constraintTop_toBottomOf="@id/textview_class"
+    <EditText
+        android:id="@+id/edittext_proficiency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="@string/proficiencia"
+        android:background="@null"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:paddingTop="16dp"
+        android:text="3"
+        android:textColorHint="@color/red"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_proficiency"
+        app:layout_constraintTop_toBottomOf="@id/textview_class" />
+
+    <EditText
+        android:id="@+id/edittext_ca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="CA"
+        android:inputType="numberDecimal"
+        android:paddingTop="16dp"
+        android:text="13"
+        android:textColorHint="@color/red"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/edittext_initiative"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edittext_proficiency" />
+
+    <EditText
+        android:id="@+id/edittext_initiative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="Iniciativa"
+        android:inputType="numberDecimal"
+        android:paddingTop="16dp"
+        android:text="3"
+        android:textColorHint="@color/red"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20sp"
-        android:paddingTop="16dp"
-        android:text="Iniciativa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintTop_toBottomOf="@id/edittext_proficiency" />
 
-    <TextView
-        android:id="@+id/textview_cd"
-        app:layout_constraintTop_toBottomOf="@id/textview_class"
+    <EditText
+        android:id="@+id/edittext_cd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="center"
+        android:hint="CD"
+        android:inputType="numberDecimal"
+        android:paddingTop="16dp"
+        android:text="0"
+        android:textColorHint="@color/red"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/textview_initiative"
-        android:textSize="20sp"
-        android:paddingTop="16dp"
-        android:text="CD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintStart_toEndOf="@id/edittext_initiative"
+        app:layout_constraintTop_toBottomOf="@id/edittext_proficiency" />
 
-    <TextView
-        android:id="@+id/textview_hp_max"
-        app:layout_constraintTop_toBottomOf="@id/textview_ca"
-        app:layout_constraintEnd_toStartOf="@id/textview_hp_current"
+    <EditText
+        android:id="@+id/edittext_hp_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="HP Total"
+        android:inputType="numberDecimal"
+        android:paddingTop="16dp"
+        android:text="80"
+        android:textColorHint="@color/red"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/edittext_hp_current"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20sp"
-        android:paddingTop="16dp"
-        android:text="Vida Máxima"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintTop_toBottomOf="@id/edittext_ca" />
 
-    <TextView
-        android:id="@+id/textview_hp_current"
-        app:layout_constraintTop_toBottomOf="@id/textview_ca"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/textview_hp_max"
-        android:textSize="20sp"
-        android:paddingTop="16dp"
-        android:text="Vida Atual"
+    <EditText
+        android:id="@+id/edittext_hp_current"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="HP Atual"
+        android:inputType="numberDecimal"
+        android:paddingTop="16dp"
+        android:text="60"
+        android:textColorHint="@color/red"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/edittext_hp_max"
+        app:layout_constraintTop_toBottomOf="@id/edittext_ca" />
 
     <TableLayout
         android:id="@+id/tabelaAtributos"
-        app:layout_constraintTop_toBottomOf="@id/textview_hp_max"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:padding="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edittext_hp_max">
 
         <!-- Cabeçalho -->
         <TableRow android:background="#DDDDDD">
+
             <TextView
-                android:text="Atributo"
                 android:layout_width="0dp"
                 android:layout_weight="2"
                 android:padding="8dp"
+                android:text="Atributo"
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="8dp"
                 android:text="Valor"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:padding="8dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:text="Modificador"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:padding="8dp"
+                android:text="Modificador"
                 android:textStyle="bold" />
         </TableRow>
 
         <!-- Força -->
         <TableRow android:background="#FFFFFF">
-            <TextView
-                android:text="Força"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:padding="8dp" />
 
             <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="8dp"
+                android:text="Força" />
+
+            <EditText
                 android:id="@+id/strength"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:padding="8dp" />
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:textColor="@color/red" />
 
             <TextView
                 android:id="@+id/mod_strength"
@@ -167,18 +214,21 @@
 
         <!-- Destreza -->
         <TableRow android:background="#F7F7F7">
-            <TextView
-                android:text="Destreza"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:padding="8dp" />
 
             <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="8dp"
+                android:text="Destreza" />
+
+            <EditText
                 android:id="@+id/dexterity"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:padding="8dp" />
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:textColor="@color/red" />
 
             <TextView
                 android:id="@+id/mod_dexterity"
@@ -190,18 +240,21 @@
 
         <!-- Constituição -->
         <TableRow android:background="#FFFFFF">
-            <TextView
-                android:text="Constituição"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:padding="8dp" />
 
             <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="8dp"
+                android:text="Constituição" />
+
+            <EditText
                 android:id="@+id/constitution"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:padding="8dp" />
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:textColor="@color/red" />
 
             <TextView
                 android:id="@+id/mod_constitution"
@@ -213,18 +266,21 @@
 
         <!-- Inteligência -->
         <TableRow android:background="#F7F7F7">
-            <TextView
-                android:text="Inteligência"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:padding="8dp" />
 
             <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="8dp"
+                android:text="Inteligência" />
+
+            <EditText
                 android:id="@+id/intelligence"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:padding="8dp" />
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:textColor="@color/red" />
 
             <TextView
                 android:id="@+id/mod_intelligence"
@@ -236,18 +292,21 @@
 
         <!-- Sabedoria -->
         <TableRow android:background="#FFFFFF">
-            <TextView
-                android:text="Sabedoria"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:padding="8dp" />
 
             <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="8dp"
+                android:text="Sabedoria" />
+
+            <EditText
                 android:id="@+id/wisdom"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:padding="8dp" />
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:textColor="@color/red" />
 
             <TextView
                 android:id="@+id/mod_wisdom"
@@ -259,18 +318,21 @@
 
         <!-- Carisma -->
         <TableRow android:background="#F7F7F7">
-            <TextView
-                android:text="Carisma"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:padding="8dp" />
 
             <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:padding="8dp"
+                android:text="Carisma" />
+
+            <EditText
                 android:id="@+id/charisma"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:padding="8dp" />
+                android:inputType="numberDecimal"
+                android:padding="8dp"
+                android:textColor="@color/red" />
 
             <TextView
                 android:id="@+id/mod_charisma"
