@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:background="@null"
         android:gravity="center"
-        android:hint="Level"
+        android:hint=""
         android:inputType="numberDecimal"
         android:paddingTop="16dp"
         android:text="7"
@@ -52,9 +52,7 @@
         android:paddingTop="16dp"
         android:text="@string/proficiencia"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@id/edittext_proficiency"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textview_class"
         app:layout_constraintTop_toBottomOf="@id/textview_class" />
 
     <EditText
@@ -69,57 +67,84 @@
         android:text="3"
         android:textColorHint="@color/red"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/textview_proficiency"
+        app:layout_constraintEnd_toEndOf="@id/edittext_level"
         app:layout_constraintTop_toBottomOf="@id/textview_class" />
+
+    <TextView
+        android:id="@+id/textview_ca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:paddingTop="16dp"
+        android:text="CA:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/textview_class"
+        app:layout_constraintTop_toBottomOf="@id/textview_proficiency" />
 
     <EditText
         android:id="@+id/edittext_ca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints="ca"
         android:background="@null"
         android:gravity="center"
-        android:hint="CA"
-        android:inputType="numberDecimal"
-        android:paddingTop="16dp"
-        android:text="13"
-        android:textColorHint="@color/red"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@id/edittext_initiative"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edittext_proficiency" />
-
-    <EditText
-        android:id="@+id/edittext_initiative"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:gravity="center"
-        android:hint="Iniciativa"
         android:inputType="numberDecimal"
         android:paddingTop="16dp"
         android:text="3"
         android:textColorHint="@color/red"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edittext_proficiency" />
+        app:layout_constraintEnd_toEndOf="@id/edittext_level"
+        app:layout_constraintTop_toBottomOf="@id/textview_proficiency" />
+
+    <TextView
+        android:id="@+id/textview_initiative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:text="Iniciativa:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/textview_class"
+        app:layout_constraintTop_toBottomOf="@id/textview_ca" />
+
+    <EditText
+        android:id="@+id/edittext_initiative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="iniciativa"
+        android:background="@null"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:paddingTop="16dp"
+        android:text="2"
+        android:textColorHint="@color/red"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/edittext_level"
+        app:layout_constraintTop_toBottomOf="@id/textview_ca" />
+
+    <TextView
+        android:id="@+id/textview_cd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:text="CD:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/textview_class"
+        app:layout_constraintTop_toBottomOf="@id/textview_initiative" />
 
     <EditText
         android:id="@+id/edittext_cd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints="CD"
         android:background="@null"
         android:gravity="center"
-        android:hint="CD"
         android:inputType="numberDecimal"
         android:paddingTop="16dp"
-        android:text="0"
+        android:text="2"
         android:textColorHint="@color/red"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/edittext_initiative"
-        app:layout_constraintTop_toBottomOf="@id/edittext_proficiency" />
+        app:layout_constraintEnd_toEndOf="@id/edittext_level"
+        app:layout_constraintTop_toBottomOf="@id/textview_initiative" />
 
     <EditText
         android:id="@+id/edittext_hp_max"
@@ -134,7 +159,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@id/edittext_hp_current"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edittext_ca" />
+        app:layout_constraintTop_toBottomOf="@id/edittext_cd" />
 
     <EditText
         android:id="@+id/edittext_hp_current"
@@ -149,7 +174,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/edittext_hp_max"
-        app:layout_constraintTop_toBottomOf="@id/edittext_ca" />
+        app:layout_constraintTop_toBottomOf="@id/edittext_cd" />
 
     <TableLayout
         android:id="@+id/tabelaAtributos"
