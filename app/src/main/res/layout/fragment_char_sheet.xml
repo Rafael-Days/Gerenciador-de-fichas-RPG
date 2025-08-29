@@ -39,7 +39,7 @@
         android:inputType="numberDecimal"
         android:paddingTop="16dp"
         android:text="7"
-        android:textColorHint="@color/red"
+        android:textColorHint="@color/md_theme_errorContainer"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/textview_class"
@@ -65,7 +65,7 @@
         android:inputType="numberDecimal"
         android:paddingTop="16dp"
         android:text="3"
-        android:textColorHint="@color/red"
+        android:textColorHint="@color/md_theme_errorContainer"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@id/edittext_level"
         app:layout_constraintTop_toBottomOf="@id/textview_class" />
@@ -91,7 +91,7 @@
         android:inputType="numberDecimal"
         android:paddingTop="16dp"
         android:text="3"
-        android:textColorHint="@color/red"
+        android:textColorHint="@color/md_theme_errorContainer"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@id/edittext_level"
         app:layout_constraintTop_toBottomOf="@id/textview_proficiency" />
@@ -116,7 +116,7 @@
         android:inputType="numberDecimal"
         android:paddingTop="16dp"
         android:text="2"
-        android:textColorHint="@color/red"
+        android:textColorHint="@color/md_theme_errorContainer"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@id/edittext_level"
         app:layout_constraintTop_toBottomOf="@id/textview_ca" />
@@ -141,7 +141,7 @@
         android:inputType="numberDecimal"
         android:paddingTop="16dp"
         android:text="2"
-        android:textColorHint="@color/red"
+        android:textColorHint="@color/md_theme_errorContainer"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@id/edittext_level"
         app:layout_constraintTop_toBottomOf="@id/textview_initiative" />
@@ -155,7 +155,7 @@
         android:inputType="numberDecimal"
         android:paddingTop="16dp"
         android:text="80"
-        android:textColorHint="@color/red"
+        android:textColorHint="@color/md_theme_errorContainer"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@id/edittext_hp_current"
         app:layout_constraintStart_toStartOf="parent"
@@ -170,7 +170,7 @@
         android:inputType="numberDecimal"
         android:paddingTop="16dp"
         android:text="60"
-        android:textColorHint="@color/red"
+        android:textColorHint="@color/md_theme_errorContainer"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/edittext_hp_max"
@@ -227,7 +227,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:padding="8dp"
-                android:textColor="@color/red" />
+                android:textColor="@color/md_theme_errorContainer" />
 
             <TextView
                 android:id="@+id/mod_strength"
@@ -253,7 +253,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:padding="8dp"
-                android:textColor="@color/red" />
+                android:textColor="@color/md_theme_errorContainer" />
 
             <TextView
                 android:id="@+id/mod_dexterity"
@@ -279,7 +279,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:padding="8dp"
-                android:textColor="@color/red" />
+                android:textColor="@color/md_theme_errorContainer" />
 
             <TextView
                 android:id="@+id/mod_constitution"
@@ -305,7 +305,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:padding="8dp"
-                android:textColor="@color/red" />
+                android:textColor="@color/md_theme_errorContainer" />
 
             <TextView
                 android:id="@+id/mod_intelligence"
@@ -331,7 +331,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:padding="8dp"
-                android:textColor="@color/red" />
+                android:textColor="@color/md_theme_errorContainer" />
 
             <TextView
                 android:id="@+id/mod_wisdom"
@@ -357,7 +357,7 @@
                 android:gravity="center"
                 android:inputType="numberDecimal"
                 android:padding="8dp"
-                android:textColor="@color/red" />
+                android:textColor="@color/md_theme_errorContainer" />
 
             <TextView
                 android:id="@+id/mod_charisma"
