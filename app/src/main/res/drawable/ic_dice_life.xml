@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="60dp"
+    android:height="75dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- D20 preenchido -->
+    <path
+
+        android:pathData="M100,10 L190,50 L160,170 L40,170 L10,50 Z"/>
+
+    <!-- "buraco" central (círculo transparente) -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M70,100 A30,30 0 1,1 130,100 A30,30 0 1,1 70,100"/>
+
+    <!-- Borda mais escura -->
+    <path
+        android:strokeColor="@color/md_theme_tertiary"
+        android:strokeWidth="3"
+        android:fillColor="@android:color/transparent"
+        android:pathData="M100,10 L190,50 L160,170 L40,170 L10,50 Z"/>
+</vector>

@@ -74,10 +74,10 @@
         android:id="@+id/textview_ca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintHorizontal_chainStyle="spread"
         android:paddingTop="16dp"
         android:text="CA:"
         android:textSize="20sp"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="@id/textview_class"
         app:layout_constraintTop_toBottomOf="@id/textview_proficiency" />
 
@@ -150,10 +150,11 @@
         android:id="@+id/edittext_hp_max"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_dice_life"
         android:gravity="center"
         android:hint="HP Total"
         android:inputType="numberDecimal"
-        android:paddingTop="16dp"
         android:text="80"
         android:textColorHint="@color/md_theme_errorContainer"
         android:textSize="20sp"
@@ -165,10 +166,11 @@
         android:id="@+id/edittext_hp_current"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_dice_life"
         android:gravity="center"
         android:hint="HP Atual"
         android:inputType="numberDecimal"
-        android:paddingTop="16dp"
         android:text="60"
         android:textColorHint="@color/md_theme_errorContainer"
         android:textSize="20sp"
@@ -180,12 +182,13 @@
         android:id="@+id/tabelaAtributos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/transparent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edittext_hp_max">
 
-        <!-- Cabeçalho -->
-        <TableRow android:background="#DDDDDD">
+        <!-- <TableRow android:background="#DDDDDD"> -->
+        <TableRow>
 
             <TextView
                 android:layout_width="0dp"
@@ -212,7 +215,7 @@
         </TableRow>
 
         <!-- Força -->
-        <TableRow android:background="#FFFFFF">
+        <TableRow>
 
             <TextView
                 android:layout_width="0dp"
@@ -224,10 +227,10 @@
                 android:id="@+id/strength"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
                 android:gravity="center"
                 android:inputType="numberDecimal"
-                android:padding="8dp"
-                android:textColor="@color/md_theme_errorContainer" />
+                android:padding="8dp" />
 
             <TextView
                 android:id="@+id/mod_strength"
@@ -238,7 +241,7 @@
         </TableRow>
 
         <!-- Destreza -->
-        <TableRow android:background="#F7F7F7">
+        <TableRow>
 
             <TextView
                 android:layout_width="0dp"
@@ -250,10 +253,10 @@
                 android:id="@+id/dexterity"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
                 android:gravity="center"
                 android:inputType="numberDecimal"
-                android:padding="8dp"
-                android:textColor="@color/md_theme_errorContainer" />
+                android:padding="8dp" />
 
             <TextView
                 android:id="@+id/mod_dexterity"
@@ -264,7 +267,7 @@
         </TableRow>
 
         <!-- Constituição -->
-        <TableRow android:background="#FFFFFF">
+        <TableRow>
 
             <TextView
                 android:layout_width="0dp"
@@ -276,10 +279,10 @@
                 android:id="@+id/constitution"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
                 android:gravity="center"
                 android:inputType="numberDecimal"
-                android:padding="8dp"
-                android:textColor="@color/md_theme_errorContainer" />
+                android:padding="8dp" />
 
             <TextView
                 android:id="@+id/mod_constitution"
@@ -290,7 +293,7 @@
         </TableRow>
 
         <!-- Inteligência -->
-        <TableRow android:background="#F7F7F7">
+        <TableRow>
 
             <TextView
                 android:layout_width="0dp"
@@ -302,10 +305,10 @@
                 android:id="@+id/intelligence"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
                 android:gravity="center"
                 android:inputType="numberDecimal"
-                android:padding="8dp"
-                android:textColor="@color/md_theme_errorContainer" />
+                android:padding="8dp" />
 
             <TextView
                 android:id="@+id/mod_intelligence"
@@ -316,7 +319,7 @@
         </TableRow>
 
         <!-- Sabedoria -->
-        <TableRow android:background="#FFFFFF">
+        <TableRow>
 
             <TextView
                 android:layout_width="0dp"
@@ -328,10 +331,10 @@
                 android:id="@+id/wisdom"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
                 android:gravity="center"
                 android:inputType="numberDecimal"
-                android:padding="8dp"
-                android:textColor="@color/md_theme_errorContainer" />
+                android:padding="8dp" />
 
             <TextView
                 android:id="@+id/mod_wisdom"
@@ -342,7 +345,7 @@
         </TableRow>
 
         <!-- Carisma -->
-        <TableRow android:background="#F7F7F7">
+        <TableRow>
 
             <TextView
                 android:layout_width="0dp"
@@ -354,10 +357,10 @@
                 android:id="@+id/charisma"
                 android:layout_width="0dp"
                 android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
                 android:gravity="center"
                 android:inputType="numberDecimal"
-                android:padding="8dp"
-                android:textColor="@color/md_theme_errorContainer" />
+                android:padding="8dp" />
 
             <TextView
                 android:id="@+id/mod_charisma"

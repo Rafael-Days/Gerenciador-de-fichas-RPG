@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.TextView
 import com.example.latariarpg.R
 import com.example.latariarpg.databinding.FragmentCharSheetBinding
 import com.example.latariarpg.databinding.FragmentSheetBinding
@@ -59,7 +61,20 @@ class CharSheetFragment : Fragment() {
             binding.intelligence.setText(it.atributos.inteligencia.toString())
             binding.wisdom.setText(it.atributos.sabedoria.toString())
             binding.charisma.setText(it.atributos.carisma.toString())
+
+            updateModifier(binding.strength, binding.modStrength)
+            updateModifier(binding.dexterity, binding.modDexterity)
+            updateModifier(binding.constitution, binding.modConstitution)
+            updateModifier(binding.intelligence, binding.modIntelligence)
+            updateModifier(binding.wisdom, binding.modWisdom)
+            updateModifier(binding.charisma, binding.modCharisma)
         }
+    }
+
+    private fun updateModifier(attributeField: EditText, modifierView: TextView) {
+        val value = attributeField.text.toString().toIntOrNull() ?: 0
+        val mod = (value - 10) / 2
+        modifierView.text = mod.toString()
     }
 
 }

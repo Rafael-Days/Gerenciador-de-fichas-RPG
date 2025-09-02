@@ -20,8 +20,8 @@ class CampaignRepository {
             destreza = 12,
             constituicao = 13,
             inteligencia = 10,
-            sabedoria = 8,
-            carisma = 15
+            sabedoria = 30,
+            carisma = 1
         )
 
         // Habilidades de exemplo
